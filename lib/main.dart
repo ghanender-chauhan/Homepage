@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:homepage_ui/Homescreen.dart';
+import 'package:homepage_ui/Screens/Homescreen.dart';
+import 'package:homepage_ui/size_config.dart';
+
 
 
 void main() {
@@ -10,16 +12,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Plant App',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.grey[100],
-       
-        textTheme: Theme.of(context).textTheme.apply(bodyColor: Colors.black),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: HomeScreen(),
-    );
+    return LayoutBuilder(builder: (context, constraints) {
+      return OrientationBuilder(builder: (context, orientation) {
+        SizeConfig().init(constraints, orientation);
+        return MaterialApp(
+          title: "App Making",
+          home: HomeScreen(),
+        );
+      });
+    });
   }
-}
+  }
