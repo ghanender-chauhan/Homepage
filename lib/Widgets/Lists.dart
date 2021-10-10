@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:homepage_ui/Widgets/bottom_sheet.dart';
+import 'package:homepage_ui/Widgets/custom_appbar.dart';
 import 'package:homepage_ui/data/data2.dart';
 import 'package:homepage_ui/size_config.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class OrderList extends StatefulWidget {
   const OrderList({Key? key}) : super(key: key);
@@ -25,7 +27,7 @@ class _OrderListState extends State<OrderList> {
               backgroundColor: Colors.transparent,
               isScrollControlled: true,
               context: context,
-              builder: (context) => buildSheet()),
+              builder: (context) => CustomApp()),
           child: Card(
             child: Row(
               children: <Widget>[
@@ -85,236 +87,7 @@ class _OrderListState extends State<OrderList> {
   }
 }
 
-Widget buildSheet() => DraggableScrollableSheet(
-    initialChildSize: 0.67,
-    maxChildSize: 0.9,
-    minChildSize: 0.67,
-    builder: (_, controller) => Container(
-          decoration: BoxDecoration(
-              color: Colors.indigo[900],
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-          padding: EdgeInsets.all(15),
-          child: ListView(
-            controller: controller,
-            children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      ClipOval(
-                        child: Image.asset(
-                          "assets/images/character.png",
-                          fit: BoxFit.fill,
-                          width: 80,
-                          height: 80,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        "Ghanender Singh",
-                        style: GoogleFonts.nunito(
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 20,),
-                  Row(
-                    children: [
-                      
-                      Padding(padding: EdgeInsets.only(left: 25)),
-                      Icon(Icons.local_phone_outlined,
-                      color: Colors.white,
-                      size: 30,),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 44),
-                        child: Text("(9414)-77-1237",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400,
-                          fontSize:17
-                          
-                        ),),
-                        
-                      ),
-                      SizedBox(width: 80,),
-                      Icon(Icons.comment_outlined,
-                      color: Colors.green,)
 
-                    ],
-                  ),
-                  SizedBox(height: 5,),
-                    Row(
-                    children: [
-                      
-                      Padding(padding: EdgeInsets.only(left: 25)),
-                      Icon(Icons.local_phone_outlined,
-                      color: Colors.white,
-                      size: 30,),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 44),
-                        child: Text("(9460)-29-1709",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400,
-                          fontSize:17
-                          
-                        ),),
-                        
-                      ),
-                      SizedBox(width: 80,),
-                      Icon(Icons.comment_outlined,
-                      color: Colors.green,)
-
-                    ],
-                  ),
-                  SizedBox(height: 13,),
-                  Divider(thickness: 5,
-                  color: Colors.white38,),
-                  SizedBox(height: 10,),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left:30),
-                        child: Icon(Icons.email,
-                        color: Colors.white,),
-                      ),
-                      
-                      Padding(
-                        padding: const EdgeInsets.only(left:44),
-                        child: Column(
-                          children: [
-                            Text("Ghanender26@gmail.com",
-                            style: TextStyle(
-                              color:Colors.white,
-                              fontSize: 15
-                            ),),
-                            Container(margin:EdgeInsets.only(right: 120,top: 5),
-                              child:Text("Personal",
-                              style: TextStyle(
-                                color: Colors.grey
-                              ),)
-                            ),
-                            
-                            
-                          ],
-                          
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10,),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left:30),
-                        child: Icon(Icons.email,
-                        color: Colors.white,),
-                      ),
-                      
-                      Padding(
-                        padding: const EdgeInsets.only(left:44),
-                        child: Column(
-                          children: [
-                            Text("gsph20139@student.nitw.ac.in",
-                            style: TextStyle(
-                              color:Colors.white,
-                              fontSize: 15
-                            ),),
-                            Container(margin:EdgeInsets.only(right: 170,top: 5),
-                              child:Text("Work",
-                              style: TextStyle(
-                                color: Colors.grey
-                              ),)
-                            )
-                            
-                          ],
-                          
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 13,),
-                  Divider(thickness: 5,
-                  color: Colors.white38,),
-                  SizedBox(height: 10,),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left:30),
-                        child: Icon(Icons.location_on,
-                        color: Colors.white,),
-                      ),
-                      
-                      Padding(
-                        padding: const EdgeInsets.only(left:45),
-                        child: Column(
-                          children: [
-                            Text("Hostel no. 1, NIT Warangal, \nHanamkonda Telangana",
-                            style: TextStyle(
-                              color:Colors.white,
-                              fontSize: 17,
-                            ),),
-                            Container(margin:EdgeInsets.only(right: 170,top: 5),
-                              child:Text("Work",
-                              style: TextStyle(
-                                color: Colors.grey
-                              ),)
-                            ),
-                            
-                            
-                          ],
-                          
-                        ),
-                      ),
-                      
-                    ],
-                  ),
-                  Padding(
-                        padding: const EdgeInsets.only(left:70,top: 10),
-                        child: Column(
-                          children: [
-                            Text("Moolchand Nagar Sendra Road\nAjmer Rajasthan",
-                            style: TextStyle(
-                              color:Colors.white,
-                              fontSize: 17
-                            ),),
-                            Container(margin:EdgeInsets.only(right: 175,top: 5),
-                              child:Text("Personal",
-                              style: TextStyle(
-                                color: Colors.grey
-                              ),)
-                            ),
-                            
-                            
-                          ],
-                          
-                        ),
-                      ),
-                  
-                ],
-              ),
-              // Image.asset("assets/images/character.png"),
-              // ClipOval(
-              //             child: Image.asset(
-              //               "assets/images/character.png",
-              //               fit: BoxFit.fill,
-              //               width: ,
-              //               height: 7,
-              //             ),
-              //           ),
-              SizedBox(
-                height: 10,
-              ),
-            ],
-          ),
-        ));
 
 // This is a block of Model Dialog 
 // showDialogFunc(context, img, title, desc) {

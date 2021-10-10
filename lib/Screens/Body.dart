@@ -43,10 +43,11 @@ class Upper extends StatelessWidget {
                               8 * SizeConfig.widthMultiplier,
                               3.5 * SizeConfig.heightMultiplier)),
                       Image.asset(
-                        "assets/images/User.png",
+                        "assets/images/one.png",
                         // height: 150,
-                        cacheHeight: 130,
+                        cacheHeight: 150,
                         cacheWidth: 130,
+                        // color: Colors.indigo,
                       ),
                     ],
                   ),

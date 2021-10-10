@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // title: const Text("data"),
         backgroundColor: Colors.indigo[900],
         leading: IconButton(
           onPressed: (){},
